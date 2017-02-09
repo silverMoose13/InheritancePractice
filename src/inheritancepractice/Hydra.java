@@ -31,8 +31,9 @@ public class Hydra extends Monster {
         this.numberOfHeads = numberOfHeads;
     }
 
-    public int usePoisonousBreath() {
-        if (isEnemyNearby() == true) {
+    public int useSecretAbility() {
+        if (isEnemyNearby() == true
+                && getSpecialAbility().equalsIgnoreCase("Poisonous Breath")) {
             if (getNumberOfHeads() <= 6 && getNumberOfHeads() >= 1) {
                 damageDealt = 15;
                 return damageDealt;

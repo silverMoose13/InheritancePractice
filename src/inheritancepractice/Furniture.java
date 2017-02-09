@@ -2,7 +2,6 @@ package inheritancepractice;
 
 public class Furniture extends HomeDecor {
 
-    private String color;
     private String designPattern;
     private String materialType;
 
@@ -12,14 +11,6 @@ public class Furniture extends HomeDecor {
 
     public void setDesignPattern(String designPattern) {
         this.designPattern = designPattern;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public String getMaterialType() {

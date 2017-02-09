@@ -1,9 +1,17 @@
 package inheritancepractice;
 
 public class Mars extends Planet {
-    private String volcanoName = "Olympus Mons";
     private boolean martian;
     private boolean lava;
+    private boolean moltenRock;
+
+    public boolean isMoltenRock() {
+        return moltenRock;
+    }
+
+    public void setMoltenRock(boolean moltenRock) {
+        this.moltenRock = moltenRock;
+    }
 
     public boolean isLava() {
         return lava;
@@ -11,14 +19,6 @@ public class Mars extends Planet {
 
     public void setLava(boolean lava) {
         this.lava = lava;
-    }
-
-    public String getVolcanoName() {
-        return volcanoName;
-    }
-
-    public void setVolcanoName(String volcanoName) {
-        this.volcanoName = volcanoName;
     }
 
     public boolean isMartian() {
@@ -29,8 +29,8 @@ public class Mars extends Planet {
         this.martian = martian;
     }
     
-    public boolean hasVolcanoErupted() {
-        if (lava == true) {
+    public boolean determineIfVolcanicActivityOccurred() {
+        if ((isVolcanoPresent() == true && lava == true) || isMoltenRock() == true) {
             return true;
         }
         else {

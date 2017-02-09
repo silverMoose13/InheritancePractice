@@ -7,6 +7,23 @@ public class Planet extends AstronomicalBody {
     private String color;
     private boolean hasRings;
     private String planetName;
+    private boolean volcanoPresent;
+
+    public String getPlanetName() {
+        return planetName;
+    }
+
+    public void setPlanetName(String planetName) {
+        this.planetName = planetName;
+    }
+
+    public boolean isVolcanoPresent() {
+        return volcanoPresent;
+    }
+
+    public void setVolcanoPresent(boolean volcanoPresent) {
+        this.volcanoPresent = volcanoPresent;
+    }
 
     public String getColor() {
         return color;
