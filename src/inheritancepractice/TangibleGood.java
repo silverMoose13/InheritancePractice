@@ -1,6 +1,6 @@
 package inheritancepractice;
 
-public class HomeDecor {
+public class TangibleGood {
 
     private int height;
     private int width;

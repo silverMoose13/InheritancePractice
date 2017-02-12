@@ -1,6 +1,6 @@
 package inheritancepractice;
 
-public class Gyarados extends Dragon {
+public class Gyarados extends WaterAndFlyingTypePokemon {
 
     private boolean hydroPump;
     private boolean dragonPulse;

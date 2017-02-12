@@ -1,6 +1,6 @@
 package inheritancepractice;
 
-public class Dragon extends Pokemon {
+public class WaterAndFlyingTypePokemon extends Pokemon {
 
     private int level;
     private boolean battleStatus;

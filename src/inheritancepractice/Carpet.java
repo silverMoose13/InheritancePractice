@@ -1,6 +1,6 @@
 package inheritancepractice;
 
-public class Couch extends Furniture {
+public class Carpet extends Furnishing {
 
     private String typeOfCouch;
     private String firmnessRating;

@@ -1,6 +1,6 @@
 package inheritancepractice;
 
-public class Furniture extends HomeDecor {
+public class Furnishing extends TangibleGood {
 
     private String designPattern;
     private String materialType;
