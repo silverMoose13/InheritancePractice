@@ -2,12 +2,17 @@ package inheritancepractice;
 
 public class Planet extends AstronomicalBody {
 
-    private int diameter;
-    private double strengthOfGravity;
-    private String color;
-    private boolean hasRings;
+    private boolean hasPlanetaryRings;
+    private boolean waterPresent;
     private String planetName;
-    private boolean volcanoPresent;
+
+    public boolean isWaterPresent() {
+        return waterPresent;
+    }
+
+    public void setWaterPresent(boolean waterPresent) {
+        this.waterPresent = waterPresent;
+    }
 
     public String getPlanetName() {
         return planetName;
@@ -17,53 +22,21 @@ public class Planet extends AstronomicalBody {
         this.planetName = planetName;
     }
 
-    public boolean isVolcanoPresent() {
-        return volcanoPresent;
+    public boolean isHasPlanetaryRings() {
+        return hasPlanetaryRings;
     }
 
-    public void setVolcanoPresent(boolean volcanoPresent) {
-        this.volcanoPresent = volcanoPresent;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public boolean isHasRings() {
-        return hasRings;
-    }
-
-    public void setHasRings(boolean hasRings) {
-        this.hasRings = hasRings;
-    }
-
-    public int getDiameter() {
-        return diameter;
-    }
-
-    public void setDiameter(int diameter) {
-        this.diameter = diameter;
-    }
-
-    public double getStrengthOfGravity() {
-        return strengthOfGravity;
-    }
-
-    public void setStrengthOfGravity(double strengthOfGravity) {
-        this.strengthOfGravity = strengthOfGravity;
+    public void setHasPlanetaryRings(boolean hasPlanetaryRings) {
+        this.hasPlanetaryRings = hasPlanetaryRings;
     }
 
     public String determinePlanetName() {
-        if (isHasRings() == true && getColor().equalsIgnoreCase("Blue") && 
-                isHasPlasma() == false) {
+        if (isHasPlanetaryRings() == true && getColor().equalsIgnoreCase("Blue") && 
+                isComposedOfPlasma() == false) {
             planetName = "Neptune";
             return planetName;
-        } else if (isHasRings() == false && getColor().equalsIgnoreCase("Grey") && 
-                isHasPlasma() == false) {
+        } else if (isHasPlanetaryRings() == false && getColor().equalsIgnoreCase("Grey") && 
+                isComposedOfPlasma() == false) {
             planetName = "Mercury";
             return planetName;
         } else {

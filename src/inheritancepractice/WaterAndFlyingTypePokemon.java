@@ -2,61 +2,37 @@ package inheritancepractice;
 
 public class WaterAndFlyingTypePokemon extends Pokemon {
 
-    private int level;
-    private boolean battleStatus;
-    private String opponentType;
-    private int opponentLevel;
-    private String winLikelihood;
+    private boolean learnedHydroPump;
+    private boolean fullyEvolved;
 
-    public String getWinLikelihood() {
-        return winLikelihood;
+    public boolean isFullyEvolved() {
+        return fullyEvolved;
     }
 
-    public void setWinLikelihood(String winLikelihood) {
-        this.winLikelihood = winLikelihood;
+    public void setFullyEvolved(boolean fullyEvolved) {
+        this.fullyEvolved = fullyEvolved;
     }
 
-    public int getOpponentLevel() {
-        return opponentLevel;
+    public boolean isLearnedHydroPump() {
+        return learnedHydroPump;
     }
 
-    public void setOpponentLevel(int opponentLevel) {
-        this.opponentLevel = opponentLevel;
+    public void setLearnedHydroPump(boolean learnedHydroPump) {
+        this.learnedHydroPump = learnedHydroPump;
     }
 
-    public String getOpponentType() {
-        return opponentType;
-    }
-
-    public void setOpponant(String opponentType) {
-        this.opponentType = opponentType;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public boolean isBattleStatus() {
-        return battleStatus;
-    }
-
-    public void setBattleStatus(boolean battleStatus) {
-        this.battleStatus = battleStatus;
-    }
-
+    @Override
     public String determineWinLikelihood() {
-        if (getOpponentType().equalsIgnoreCase("Dragon")) {
-            if (getLevel() > getOpponentLevel()) {
+        if (getOpponentType().equalsIgnoreCase("Electric")) {
+            if (getExperienceLevel() > getOpponentLevel()
+                    && isFullyEvolved() == true
+                    && isLearnedHydroPump() == true) {
                 setWinLikelihood("Will be a tough battle, but you should win");
             } else {
                 setWinLikelihood("You probably won't win this one.");
             }
         } else if (getOpponentType().equalsIgnoreCase("Fire")) {
-            if (getLevel() > getOpponentLevel()) {
+            if (getExperienceLevel() > getOpponentLevel()) {
                 setWinLikelihood("This should be an easy one for you to win.");
             } else {
                 setWinLikelihood("I would still try your luck despite being a lower level. This"
@@ -68,4 +44,5 @@ public class WaterAndFlyingTypePokemon extends Pokemon {
         }
         return getWinLikelihood();
     }
+
 }

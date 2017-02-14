@@ -2,33 +2,15 @@ package inheritancepractice;
 
 public class Refrigerator extends Appliance {
 
-    private String color;
-    private String exteriorMaterial;
     private boolean builtInWaterDispenser;
-    private boolean energyStarStatus;
+    private boolean energyStarCertified;
 
-    public boolean isEnergyStarStatus() {
-        return energyStarStatus;
+    public boolean isEnergyStarCertified() {
+        return energyStarCertified;
     }
 
-    public void setEnergyStarStatus(boolean energyStarStatus) {
-        this.energyStarStatus = energyStarStatus;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getExteriorMaterial() {
-        return exteriorMaterial;
-    }
-
-    public void setExteriorMaterial(String exteriorMaterial) {
-        this.exteriorMaterial = exteriorMaterial;
+    public void setEnergyStarCertified(boolean energyStarCertified) {
+        this.energyStarCertified = energyStarCertified;
     }
 
     public boolean isBuiltInWaterDispenser() {
@@ -45,8 +27,8 @@ public class Refrigerator extends Appliance {
             if (isFunctionalStatus() == true) {
                 return "Still works and is relatively new. Keep it.";
             } else {
-                if (isEnergyStarStatus() == true) {
-                    if (getExteriorMaterial().equalsIgnoreCase("Stainless Steel")) {
+                if (isEnergyStarCertified() == true) {
+                    if (getMaterialComposition().equalsIgnoreCase("Stainless Steel")) {
                         return "I would keep this refrigerator because it contains the energy star"
                                 + "seal on it and it composed of stainless steel. You probably already paid"
                                 + "a pretty penny for it so I'd take it in for repair as it will be worth it.";

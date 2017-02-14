@@ -2,11 +2,11 @@ package inheritancepractice;
 
 public class Creature {
 
-    private boolean eyes;
     private boolean tail;
     private boolean scales;
     private boolean fins;
     private int height;
+    private int weight;
 
     public boolean isFins() {
         return fins;
@@ -14,15 +14,6 @@ public class Creature {
 
     public void setFins(boolean fins) {
         this.fins = fins;
-    }
-    private int weight;
-
-    public boolean isEyes() {
-        return eyes;
-    }
-
-    public void setEyes(boolean eyes) {
-        this.eyes = eyes;
     }
 
     public boolean isTail() {

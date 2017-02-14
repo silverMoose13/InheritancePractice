@@ -1,31 +1,37 @@
 package inheritancepractice;
 
-public class Furnishing extends TangibleGood {
+public class Furnishing extends Decoration {
 
-    private String designPattern;
-    private String materialType;
+    private String typeOfFurnishing;
+    private String roomToBePlacedIn;
+    private double surfaceAreaOfRoomToBePlacedIn;
 
-    public String getDesignPattern() {
-        return designPattern;
+    public String getRoomToBePlacedIn() {
+        return roomToBePlacedIn;
     }
 
-    public void setDesignPattern(String designPattern) {
-        this.designPattern = designPattern;
+    public void setRoomToBePlacedIn(String roomToBePlacedIn) {
+        this.roomToBePlacedIn = roomToBePlacedIn;
     }
 
-    public String getMaterialType() {
-        return materialType;
+    public double getSurfaceAreaOfRoomToBePlacedIn() {
+        return surfaceAreaOfRoomToBePlacedIn;
     }
 
-    public void setMaterialType(String materialType) {
-        this.materialType = materialType;
+    public void setSurfaceAreaOfRoomToBePlacedIn(double surfaceAreaOfRoomToBePlacedIn) {
+        this.surfaceAreaOfRoomToBePlacedIn = surfaceAreaOfRoomToBePlacedIn;
     }
 
-    public boolean isThisStylish() {
-        if ((getColor().equalsIgnoreCase("Orange") || getColor().equalsIgnoreCase("Purple"))
-                && getDesignPattern().equalsIgnoreCase("Striped")) {
-            return true;
-        } else if (getColor().equalsIgnoreCase("Blue") && getMaterialType().equalsIgnoreCase("Suede")) {
+    public String getTypeOfFurnishing() {
+        return typeOfFurnishing;
+    }
+
+    public void setTypeOfFurnishing(String typeOfFurnishing) {
+        this.typeOfFurnishing = typeOfFurnishing;
+    }
+
+    public boolean determineIfFurnishingWillFitInRoom() {
+        if (calculateSurfaceArea() < getSurfaceAreaOfRoomToBePlacedIn()) {
             return true;
         } else {
             return false;

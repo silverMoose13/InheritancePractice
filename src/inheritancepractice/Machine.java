@@ -5,6 +5,15 @@ public class Machine {
     private String materialComposition;
     private boolean functionalStatus;
     private int ageInYears;
+    private String color;
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
 
     public int getAgeInYears() {
         return ageInYears;

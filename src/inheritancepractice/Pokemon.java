@@ -3,8 +3,27 @@ package inheritancepractice;
 public class Pokemon {
 
     private String type;
-    private int height;
-    private int weight;
+    private int experienceLevel;
+    private boolean rechargedForBattle;
+    private String opponentType;
+    private int opponentLevel;
+    private String winLikelihood;
+
+    public int getExperienceLevel() {
+        return experienceLevel;
+    }
+
+    public void setExperienceLevel(int experienceLevel) {
+        this.experienceLevel = experienceLevel;
+    }
+
+    public boolean isRechargedForBattle() {
+        return rechargedForBattle;
+    }
+
+    public void setRechargedForBattle(boolean rechargedForBattle) {
+        this.rechargedForBattle = rechargedForBattle;
+    }
 
     public String getType() {
         return type;
@@ -14,20 +33,28 @@ public class Pokemon {
         this.type = type;
     }
 
-    public int getHeight() {
-        return height;
+    public String getWinLikelihood() {
+        return winLikelihood;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
+    public void setWinLikelihood(String winLikelihood) {
+        this.winLikelihood = winLikelihood;
     }
 
-    public int getWeight() {
-        return weight;
+    public int getOpponentLevel() {
+        return opponentLevel;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
+    public void setOpponentLevel(int opponentLevel) {
+        this.opponentLevel = opponentLevel;
+    }
+
+    public String getOpponentType() {
+        return opponentType;
+    }
+
+    public void setOpponant(String opponentType) {
+        this.opponentType = opponentType;
     }
 
     public String determineTypeWeakness() {
@@ -52,6 +79,15 @@ public class Pokemon {
                 weakness = "Unknown based on supplied data";
         }
         return weakness;
+    }
+
+    public String determineWinLikelihood() {
+            if (getExperienceLevel() > getOpponentLevel()) {
+                setWinLikelihood("Will be a tough battle, but you should win");
+            } else {
+                setWinLikelihood("You probably won't win this one.");
+            }
+        return getWinLikelihood();
     }
 
 }

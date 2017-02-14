@@ -2,39 +2,39 @@ package inheritancepractice;
 
 public class Gyarados extends WaterAndFlyingTypePokemon {
 
-    private boolean hydroPump;
-    private boolean dragonPulse;
-    private boolean hyperBeam;
+    private boolean learnedIntimidate;
+    private boolean learnedMoxie;
+    private boolean learnedMoldBreaker;
 
-    public boolean isHydroPump() {
-        return hydroPump;
+    public boolean isLearnedIntimidate() {
+        return learnedIntimidate;
     }
 
-    public void setHydroPump(boolean hydroPump) {
-        this.hydroPump = hydroPump;
+    public void setLearnedIntimidate(boolean learnedIntimidate) {
+        this.learnedIntimidate = learnedIntimidate;
     }
 
-    public boolean isDragonPulse() {
-        return dragonPulse;
+    public boolean isLearnedMoxie() {
+        return learnedMoxie;
     }
 
-    public void setDragonPulse(boolean dragonPulse) {
-        this.dragonPulse = dragonPulse;
+    public void setLearnedMoxie(boolean learnedMoxie) {
+        this.learnedMoxie = learnedMoxie;
     }
 
-    public boolean isHyperBeam() {
-        return hyperBeam;
+    public boolean isLearnedMoldBreaker() {
+        return learnedMoldBreaker;
     }
 
-    public void setHyperBeam(boolean hyperBeam) {
-        this.hyperBeam = hyperBeam;
+    public void setLearnedMoldBreaker(boolean learnedMoldBreaker) {
+        this.learnedMoldBreaker = learnedMoldBreaker;
     }
 
     @Override
     public String determineWinLikelihood() {
         if (getOpponentType().equalsIgnoreCase("Dragon")) {
-            if (getLevel() > getOpponentLevel()) {
-                if (isHydroPump() == true && isHyperBeam() == true && isDragonPulse() == true) {
+            if (getExperienceLevel() > getOpponentLevel()) {
+                if (isLearnedIntimidate() == true && isLearnedMoldBreaker() == true && isLearnedMoxie() == true) {
                     setWinLikelihood("Will be a tough battle, but you should win");
                 } else {
                     setWinLikelihood("You don't know some of your best moves Gyarados so I don't know"
@@ -44,7 +44,7 @@ public class Gyarados extends WaterAndFlyingTypePokemon {
                 setWinLikelihood("You probably won't win this one.");
             }
         } else if (getOpponentType().equalsIgnoreCase("Fire")) {
-            if (getLevel() > getOpponentLevel()) {
+            if (getExperienceLevel() > getOpponentLevel()) {
                 setWinLikelihood("This should be an easy one for you to win Gyarados.");
             } else {
                 setWinLikelihood("Given you are part water-type, it doesn't matter you are a lower"

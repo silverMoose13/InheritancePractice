@@ -2,36 +2,30 @@ package inheritancepractice;
 
 public class Hobbit extends Humanoid {
 
-    private boolean wearsHumanesqueClothes;
-    private boolean walksBarefoot;
-    private boolean hadSecondBreakfast;
+    private String middleEarthHomeLocation;
+    private boolean liveInSmial;
 
-    public boolean isHadSecondBreakfast() {
-        return hadSecondBreakfast;
+    public boolean isLiveInSmial() {
+        return liveInSmial;
     }
 
-    public void setHadSecondBreakfast(boolean hadSecondBreakfast) {
-        this.hadSecondBreakfast = hadSecondBreakfast;
+    public void setLiveInSmial(boolean liveInSmial) {
+        this.liveInSmial = liveInSmial;
     }
 
-    public boolean isWearsHumanesqueClothes() {
-        return wearsHumanesqueClothes;
+    public String getMiddleEarthHomeLocation() {
+        return middleEarthHomeLocation;
     }
 
-    public void setWearsHumanesqueClothes(boolean wearsHumanesqueClothes) {
-        this.wearsHumanesqueClothes = wearsHumanesqueClothes;
-    }
-
-    public boolean isWalksBarefoot() {
-        return walksBarefoot;
-    }
-
-    public void setBarefoot(boolean barefoot) {
-        this.walksBarefoot = barefoot;
+    public void setMiddleEarthHomeLocation(String middleEarthHomeLocation) {
+        this.middleEarthHomeLocation = middleEarthHomeLocation;
     }
 
     public boolean determineIfTrueHobbit() {
-        if (isWalksBarefoot() == true && isWearsHumanesqueClothes() == true
+        if ((getMiddleEarthHomeLocation().equalsIgnoreCase("The Shire") ||
+                getMiddleEarthHomeLocation().equalsIgnoreCase("Bree") ||
+                getMiddleEarthHomeLocation().equalsIgnoreCase("Valley of Anduin")) 
+                && isWalksBarefoot() == true
                 && compareHeightToHuman().matches("Shorter than most humans.")
                 && compareWeightToHuman().matches("Lighter than most humans.")) {
             return true;

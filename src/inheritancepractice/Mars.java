@@ -1,39 +1,47 @@
 package inheritancepractice;
 
 public class Mars extends Planet {
-    private boolean martian;
-    private boolean lava;
-    private boolean moltenRock;
 
-    public boolean isMoltenRock() {
-        return moltenRock;
+    private String volcanoName;
+    private boolean lavaFlowing;
+    private boolean moltenRockPresent;
+
+    public String getVolcanoName() {
+        return volcanoName;
     }
 
-    public void setMoltenRock(boolean moltenRock) {
-        this.moltenRock = moltenRock;
+    public void setVolcanoName(String volcanoName) {
+        this.volcanoName = volcanoName;
     }
 
-    public boolean isLava() {
-        return lava;
+    public boolean isMoltenRockPresent() {
+        return moltenRockPresent;
     }
 
-    public void setLava(boolean lava) {
-        this.lava = lava;
+    public void setMoltenRockPresent(boolean moltenRockPresent) {
+        this.moltenRockPresent = moltenRockPresent;
     }
 
-    public boolean isMartian() {
-        return martian;
+    public boolean isLavaFlowing() {
+        return lavaFlowing;
     }
 
-    public void setMartian(boolean martian) {
-        this.martian = martian;
+    public void setLavaFlowing(boolean lava) {
+        this.lavaFlowing = lava;
     }
-    
-    public boolean determineIfVolcanicActivityOccurred() {
-        if ((isVolcanoPresent() == true && lava == true) || isMoltenRock() == true) {
+
+    public boolean determineIfVolcanicActivityOccurredOnMars() {
+        if ((lavaFlowing == true) || isMoltenRockPresent() == true) {
             return true;
+        } else {
+            return false;
         }
-        else {
+    }
+
+    public boolean determineIfLifePotentiallyExistsOnMars() {
+        if (isWaterPresent() == true) {
+            return true;
+        } else {
             return false;
         }
     }

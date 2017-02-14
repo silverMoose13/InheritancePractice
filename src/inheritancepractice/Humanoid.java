@@ -4,7 +4,24 @@ public class Humanoid {
 
     private int heightInches;
     private int weightPounds;
-    private String sizeComparison;
+    private boolean walksBarefoot;
+    private String nextAdventureLocation;
+
+    public String getNextAdventureLocation() {
+        return nextAdventureLocation;
+    }
+
+    public void setNextAdventureLocation(String nextAdventureLocation) {
+        this.nextAdventureLocation = nextAdventureLocation;
+    }
+
+    public boolean isWalksBarefoot() {
+        return walksBarefoot;
+    }
+
+    public void setWalksBarefoot(boolean walksBarefoot) {
+        this.walksBarefoot = walksBarefoot;
+    }
 
     public int getHeightInches() {
         return heightInches;
@@ -23,20 +40,22 @@ public class Humanoid {
     }
 
     public String compareHeightToHuman() {
+        String heightComparison = "";
         if (getHeightInches() > 80) {
-            sizeComparison = "Taller than most humans.";
+            heightComparison = "Taller than most humans.";
         } else if (getHeightInches() < 54) {
-            sizeComparison = "Shorter than most humans.";
+            heightComparison = "Shorter than most humans.";
         }
-        return sizeComparison;
+        return heightComparison;
     }
 
     public String compareWeightToHuman() {
+        String weightComparison = "";
         if (getWeightPounds() > 400) {
-            sizeComparison = "Heavier than most humans.";
+            weightComparison = "Heavier than most humans.";
         } else if (getWeightPounds() < 50) {
-            sizeComparison = "Lighter than most humans.";
+            weightComparison = "Lighter than most humans.";
         }
-        return sizeComparison;
+        return weightComparison;
     }
 }

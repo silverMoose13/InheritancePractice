@@ -3,9 +3,34 @@ package inheritancepractice;
 public class AstronomicalBody {
 
     private int mass;
-    private int magneticFieldStrength;
-    private String spaceObject;
-    private boolean hasPlasma;
+    private String color;
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+    private boolean composedOfPlasma;
+    private boolean composedOfHydrogen;
+    private boolean composedOfHelium;
+
+    public boolean isComposedOfHydrogen() {
+        return composedOfHydrogen;
+    }
+
+    public void setComposedOfHydrogen(boolean composedOfHydrogen) {
+        this.composedOfHydrogen = composedOfHydrogen;
+    }
+
+    public boolean isComposedOfHelium() {
+        return composedOfHelium;
+    }
+
+    public void setComposedOfHelium(boolean composedOfHelium) {
+        this.composedOfHelium = composedOfHelium;
+    }
 
     public void setMass(int mass) {
         this.mass = mass;
@@ -15,32 +40,17 @@ public class AstronomicalBody {
         return mass;
     }
 
-    public void setMagneticFieldStrength(int magneticFieldStrength) {
-        this.magneticFieldStrength = magneticFieldStrength;
+    public void setComposedOfPlasma(boolean composedOfPlasma) {
+        this.composedOfPlasma = composedOfPlasma;
     }
 
-    public int getMagneticFieldStrength() {
-        return magneticFieldStrength;
-    }
-
-    public void setSpaceObject(String spaceObject) {
-        this.spaceObject = spaceObject;
-    }
-
-    public String getSpaceObject() {
-        return spaceObject;
-    }
-
-    public void setHasPlasma(boolean hasPlasma) {
-        this.hasPlasma = hasPlasma;
-    }
-
-    public boolean isHasPlasma() {
-        return hasPlasma;
+    public boolean isComposedOfPlasma() {
+        return composedOfPlasma;
     }
 
     public boolean isSpaceObjectAStar() {
-        if (getSpaceObject().equalsIgnoreCase("Luminous Sphere") && isHasPlasma() == true) {
+        if (isComposedOfPlasma() == true && isComposedOfHelium() == true
+                && isComposedOfHydrogen() == true) {
             return true;
         } else {
             return false;
